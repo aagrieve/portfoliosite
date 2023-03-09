@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: lavender;
+  background-size: cover;
+  margin: 0;
+  text-align: center;
+  min-height: 100vh;
+}
+
+main {
+  background-color: plum;
+  text-align: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0;
+}
+
+.navbar {
+  background-color: orchid;
+}
+
+.grid-container {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.name {
+  color: black;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  justify-self: center;
+  border: 2px solid transparent;
+  padding: 15px;
+}
+
+.name:hover {
+  color: white;
+  border: 2px solid;
+}
+
+.tab {
+  color: black;
+  justify-self: end;
+  padding: 15px;
+  border: 2px solid transparent;
+}
+
+.tab:hover {
+  color: white;
+  border: 2px solid;
+  border-color: black;
+}
+
+.page {
+  border: solid;
+  border-color: black;
+  min-height: 90vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+}
+
+@media (min-width: 1024px) {
+}
