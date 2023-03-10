@@ -1,7 +1,18 @@
+* {
+  /*outline: 1px solid red;*/
+  font: 16px sans-serif;
+}
+
+:root {
+  --backcol: #ffffff;
+  --backhi: #f3f3f3;
+  --hoverblue: #127bd1;
+}
+
 body {
   display: flex;
   justify-content: center;
-  background-color: lavender;
+  background-color: var(--backcol);
   background-size: cover;
   margin: 0;
   text-align: center;
@@ -9,59 +20,169 @@ body {
 }
 
 main {
-  background-color: plum;
+  background-color: var(--backcol);
   text-align: center;
   justify-content: center;
-  width: 80%;
   margin: 0;
+  max-width: 1500px;
 }
 
 .navbar {
-  background-color: orchid;
+  /*not necessary */
+  overflow: hidden;
 }
+
+ul {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  background-color: var(--backcol);
+}
+
+li {
+  padding: 15px;
+}
+
+/*
+li:hover {
+  /*change background color to a bit darker of existing color
+}
+*/
 
 .grid-container {
   display: grid;
-  grid-auto-flow: column;
 }
 
 .name {
   color: black;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  justify-self: center;
-  border: 2px solid transparent;
-  padding: 15px;
+  font-size: large;
+  justify-self: left;
+  align-self: start;
+  grid-column: 1fr / span 4fr;
 }
 
 .name:hover {
   color: white;
-  border: 2px solid;
+  background-color: var(--hoverblue);
 }
 
 .tab {
   color: black;
-  justify-self: end;
-  padding: 15px;
-  border: 2px solid transparent;
+  font-size: medium;
+  justify-self: center;
+  align-self: center;
 }
 
 .tab:hover {
   color: white;
-  border: 2px solid;
-  border-color: black;
+  background-color: var(--hoverblue);
+  border-radius: 5px;
 }
 
 .page {
-  border: solid;
-  border-color: black;
-  min-height: 90vh;
-  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 0px;
+  margin-top: 50px;
   margin-bottom: 10px;
 }
 
+.headshot {
+  justify-self: center;
+  align-self: center;
+  margin-top: 30px;
+  border-radius: 8px;
+  border: 2px solid var(--backhi);
+  border-color: var(--backhi);
+  width: 90%;
+  max-width: 450px;
+  max-height: 450px;
+  min-width: 250px;
+  min-height: 250px;
+}
+
+.divider {
+  display: none;
+}
+
+.para {
+  padding: 5px;
+  justify-self: center;
+  align-self: center;
+  background-color: var(--backhi);
+  border-radius: 8px;
+  margin: 10px;
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
+  main {
+    width: 80%;
+  }
+  .page {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    margin-top: 0px;
+  }
+  .divider {
+    display: grid;
+    margin: 0;
+    justify-self: center;
+    align-self: center;
+  }
+  ul {
+    position: static;
+    width: 100%;
+  }
+  .tab {
+    font-size: medium;
+  }
+  .name {
+    font-size: x-large;
+  }
+  .headshot {
+    margin: 10px;
+  }
+  .wide {
+    grid-column: span 2;
+  }
 }
 
 @media (min-width: 1024px) {
+  main {
+    width: 80%;
+  }
+  .page {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    margin-top: 0px;
+  }
+  .divider {
+    display: grid;
+    margin: 0;
+    justify-self: center;
+    align-self: center;
+  }
+  ul {
+    position: static;
+    width: 100%;
+  }
+  .tab {
+    font-size: large;
+  }
+  .name {
+    font-size: xx-large;
+  }
+  .headshot {
+    margin: 10px;
+  }
+  .wide {
+    grid-column: span 2;
+  }
 }
