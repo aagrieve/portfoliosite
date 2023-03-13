@@ -10,8 +10,8 @@
 }
 
 body {
-  display: flex;
   justify-content: center;
+  display: flex;
   background-color: var(--backcol);
   background-size: cover;
   margin: 0;
@@ -22,14 +22,8 @@ body {
 main {
   background-color: var(--backcol);
   text-align: center;
-  justify-content: center;
   margin: 0;
   max-width: 1500px;
-}
-
-.navbar {
-  /*not necessary */
-  overflow: hidden;
 }
 
 ul {
@@ -42,6 +36,7 @@ ul {
   padding: 0;
   overflow: hidden;
   position: fixed;
+  left: 0px;
   width: 100%;
   background-color: var(--backcol);
 }

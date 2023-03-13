@@ -109,13 +109,44 @@ const workPage = () => {
 // ----------------------------------------
 
 // PROJECT --------------------------------
+function createProject(title, description, imgPath, altText) {
+  // create Elements
+  const projImg = document.createElement("img");
+  const projBlurb = document.createElement("div");
+  const projTitle = document.createElement("h2");
+  const projDesc = document.createElement("div");
+  const descNode = document.createTextNode(description);
+  const titleNode = document.createTextNode(title);
+
+  // set up Image
+  projImg.setAttribute("src", imgPath);
+  projImg.setAttribute("alt", altText);
+  projImg.setAttribute("class", "headshot");
+
+  // set up description
+  projBlurb.append(descNode);
+  projTitle.append(titleNode);
+  projDesc.append(projTitle);
+  projDesc.append(projBlurb);
+
+  // finalize results and return
+  return [projImg, projDesc];
+}
+
 const projectPage = () => {
   if (checkPage("projects")) {
     return;
   }
   resetPage("projects");
 
-  console.log("project page");
+  var project1 = createProject(
+    "testTitle",
+    "testDescription",
+    "./images/headshot.jpg"
+  );
+
+  page.append(project1[0]);
+  page.append(project1[1]);
 };
 // ----------------------------------------
 
