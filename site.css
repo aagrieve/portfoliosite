@@ -1,12 +1,15 @@
 * {
   /*outline: 1px solid red;*/
-  font: 16px sans-serif;
+  font: 16px monospace;
 }
 
 :root {
   --backcol: #ffffff;
   --backhi: #f3f3f3;
+  --imgBorder: #4993cf;
+  --backhishadow: #7c7c7c;
   --hoverblue: #127bd1;
+  --submitgreen: #17c500;
 }
 
 body {
@@ -63,6 +66,11 @@ li:hover {
   grid-column: 1fr / span 4fr;
 }
 
+.title {
+  font-size: x-large;
+  text-decoration: underline;
+}
+
 .name:hover {
   color: white;
   background-color: var(--hoverblue);
@@ -87,6 +95,47 @@ li:hover {
   border: 0px;
   margin-top: 50px;
   margin-bottom: 10px;
+  column-gap: 0;
+}
+
+.projImg {
+  justify-self: center;
+  align-self: center;
+  margin-top: 30px;
+  border-radius: 8px;
+  border: 4px solid var(--imgBorder);
+  width: 90%;
+  max-width: 400px;
+  max-height: 400px;
+  min-width: 200px;
+  min-height: 200px;
+  z-index: auto;
+}
+
+.clickMe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  justify-self: center;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.5s;
+  z-index: 10;
+  color: white;
+}
+
+.projImg:hover {
+  border: 4px solid var(--hoverblue);
+}
+
+.projImg:hover + .clickMe {
+  visibility: visible;
+  opacity: 1;
+}
+
+.clickMe:hover {
+  visibility: visible;
 }
 
 .headshot {
@@ -94,8 +143,7 @@ li:hover {
   align-self: center;
   margin-top: 30px;
   border-radius: 8px;
-  border: 2px solid var(--backhi);
-  border-color: var(--backhi);
+  border: 5px solid var(--imgBorder);
   width: 90%;
   max-width: 450px;
   max-height: 450px;
@@ -103,17 +151,93 @@ li:hover {
   min-height: 250px;
 }
 
-.divider {
-  display: none;
-}
-
 .para {
   padding: 5px;
   justify-self: center;
   align-self: center;
   background-color: var(--backhi);
+  box-shadow: 3px 3px 3px var(--backhishadow);
   border-radius: 8px;
   margin: 10px;
+}
+
+.form {
+  width: 80%;
+  justify-self: center;
+  background-color: var(--backhi);
+  box-shadow: 3px 3px 3px var(--backhishadow);
+  border-radius: 8px;
+  margin-top: 30px;
+  max-width: 510px;
+}
+
+.formHeader {
+  width: 100%;
+  font-size: x-large;
+  text-align: center;
+  border: 0;
+  padding: 0;
+}
+
+.formElement {
+  border: 0;
+  padding: 0;
+}
+
+.label {
+  font-weight: bold;
+  font-size: smaller;
+  vertical-align: middle;
+}
+
+.input-box {
+  width: 40%;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+.input-box:hover {
+  border-color: var(--hoverblue);
+}
+
+.message-box {
+  width: 90%;
+  height: auto;
+  margin-bottom: 5%;
+  border-radius: 4px;
+}
+
+.btn {
+  border-style: solid;
+  border-radius: 5px;
+  width: 35%;
+  height: 30px;
+  font-size: medium;
+  margin-bottom: 5%;
+}
+
+.btn[type="submit"] {
+  background-color: white;
+  border-color: black;
+  color: black;
+  margin-right: 5px;
+}
+
+.btn[type="submit"]:hover {
+  background-color: var(--hoverblue);
+  color: white;
+}
+
+.btn[type="reset"] {
+  border-color: black;
+  background-color: white;
+  color: black;
+  margin-left: 5px;
+}
+
+.btn[type="reset"]:hover {
+  background-color: red;
+  color: white;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -122,15 +246,10 @@ li:hover {
   }
   .page {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: auto;
     margin-top: 0px;
   }
-  .divider {
-    display: grid;
-    margin: 0;
-    justify-self: center;
-    align-self: center;
-  }
+
   ul {
     position: static;
     width: 100%;
@@ -144,8 +263,14 @@ li:hover {
   .headshot {
     margin: 10px;
   }
+  .projImg {
+    margin: 10px;
+  }
   .wide {
     grid-column: span 2;
+  }
+  .form {
+    margin-top: 0;
   }
 }
 
@@ -155,14 +280,8 @@ li:hover {
   }
   .page {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-rows: auto;
     margin-top: 0px;
-  }
-  .divider {
-    display: grid;
-    margin: 0;
-    justify-self: center;
-    align-self: center;
   }
   ul {
     position: static;
@@ -179,5 +298,11 @@ li:hover {
   }
   .wide {
     grid-column: span 2;
+  }
+  .para {
+    width: 80%;
+  }
+  .form {
+    margin-top: 0;
   }
 }
