@@ -6,7 +6,7 @@ var bioString =
 var bioString2 =
   "I am pursuing a Bachelors of Science in Computer Science and a minor in Mathematics at the Masseh College of Engineering and Computer Science.";
 var bioString3 =
-  "Both in school and out I enjoy learning new skills and broadening my understanding of my various interests and hobbies. I am always eager to find ways to improve and grow as an individual.";
+  "Both in school and out I enjoy learning new skills and improving on old ones. I have the benefit of variety of hobbies including climbing, snowboarding, surfing, writing, cello, and more. I am always eager to find ways to grow as an individual.";
 
 // EDUCATION STRINGS
 var educationString = "Education";
@@ -70,14 +70,16 @@ var workList = [
 var projectList = [
   [
     "Primes",
-    "desc",
+    "This project was assigned during the Intro to Operating Systems course I took during the Fall of 2022. It counts prime numbers up to an user selected value. It is multithreaded, and the number of threads utilized can be selected by the user as well.",
+    "Prime numbers are counted by starting a thread at a particular value, and marking the multiples of that value as non-prime in a bitblock array. Should the multiple already be marked as non-prime, the thread merely continues past that number. Multiple threads improve the speed because they each handle their own multiples. Once the thread reaches the square root of the upper bound, it ends and picks the next value to find multiples of.",
     "./images/primes.gif",
     "A gif of prime numbers being printed on a screen up to 10 million",
     "https://github.com/grievepdx/primes",
   ],
   [
     "BattleTyper",
-    "desc",
+    "This project was the first major C++ project I created for the course Programming Methods and Software Implementations in the Fall of 2022. The assignment required a game to be made with 3 types of game pieces and to utilize array of linked lists, circular linked lists, and modern C++ vectors.",
+    "The game was inspired by oldschool RPGs and typing games. The game is 2 player, where each player selects a class and uses it to battle each other. Attacks can be cast using typed input, which requires precision to do maximum damage. The game goes until one players character reaches 0 hp.",
     "./images/battletyper.jpg",
     "An image of BattleTyper's console menu",
     "https://github.com/grievepdx/battletyper",
@@ -117,7 +119,6 @@ const aboutPage = () => {
   bio.append(bio3);
 
   // education section
-  // clean up
   const education = document.createElement("div");
   education.setAttribute("class", "para wide");
   const edu1 = document.createElement("p");
@@ -165,7 +166,6 @@ const aboutPage = () => {
   //page append
   page.append(headshot);
   page.append(bio);
-  //page.append(divider);
   page.append(education);
   page.append(courses);
 };
@@ -226,16 +226,25 @@ function leaveSite(link) {
   window.location = link;
 }
 
-function createProject(title, description, imgPath, altText, link) {
+function createProject(
+  title,
+  description,
+  description2,
+  imgPath,
+  altText,
+  link
+) {
   // create Elements
   const projImg = document.createElement("img");
   const projImgDiv = document.createElement("div");
   projImgDiv.style.position = "relative";
   const projBlurb = document.createElement("p");
+  const projBlurb2 = document.createElement("p");
   const projTitle = document.createElement("h2");
   projTitle.setAttribute("class", "title");
   const projDesc = document.createElement("div");
   const descNode = document.createTextNode(description);
+  const descNode2 = document.createTextNode(description2);
   const titleNode = document.createTextNode(title);
 
   // set up Image
@@ -253,11 +262,13 @@ function createProject(title, description, imgPath, altText, link) {
 
   // set up description
   projBlurb.append(descNode);
+  projBlurb2.append(descNode2);
   projTitle.append(titleNode);
   projDesc.setAttribute("class", "para");
   projDesc.style.width = "90%";
   projDesc.append(projTitle);
   projDesc.append(projBlurb);
+  projDesc.append(projBlurb2);
 
   // finalize results and return
   return [projImgDiv, projDesc];
@@ -276,7 +287,8 @@ const projectPage = () => {
       projectArr[1],
       projectArr[2],
       projectArr[3],
-      projectArr[4]
+      projectArr[4],
+      projectArr[5]
     );
     page.append(project[0]);
     page.append(project[1]);
