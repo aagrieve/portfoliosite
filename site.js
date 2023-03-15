@@ -328,7 +328,6 @@ const contactPage = () => {
   messageLabel.innerHTML = "Message for Aidan:";
   const messageBox = document.createElement("textarea");
   messageBox.setAttribute("class", "message-box");
-  messageBox.setAttribute("type", "text");
   messageBox.setAttribute("id", "message");
   messageBox.setAttribute("placeholder", "Your message here!");
   messageBox.setAttribute("rows", "15");
