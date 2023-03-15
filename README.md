@@ -1,5 +1,11 @@
 # portfoliosite
 
+## Information
+
+This project was the final assignment for the Intro to Web Development course I took in Winter 2023. It was my first attempt at making a website from scratch. I am happy to have completed it, and definitely improved my understanding of HTML, CSS, and JS during the process.
+
+If I had more time to work on the project, I would have explored bootstrap or a different CSS framework. I used grid and flexbox, which I think limited my structural success with the time constraint. Additionally, I would have liked to add a dark mode.
+
 ## How to run
 
 - Download the files from this repository
