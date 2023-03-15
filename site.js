@@ -80,7 +80,7 @@ var projectList = [
     "BattleTyper",
     "This project was the first major C++ project I created for the course Programming Methods and Software Implementations in the Fall of 2022. The assignment required a game to be made with 3 types of game pieces and to utilize array of linked lists, circular linked lists, and modern C++ vectors.",
     "The game was inspired by oldschool RPGs and typing games. The game is 2 player, where each player selects a class and uses it to battle each other. Attacks can be cast using typed input, which requires precision to do maximum damage. The game goes until one players character reaches 0 hp.",
-    "./images/battletyper.jpg",
+    "./images/battletyper.JPG",
     "An image of BattleTyper's console menu",
     "https://github.com/grievepdx/battletyper",
   ],
