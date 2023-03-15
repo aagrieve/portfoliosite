@@ -53,11 +53,14 @@ li {
 
 .name {
   color: black;
-  font-size: large;
   justify-self: left;
   align-self: start;
   border-radius: 5px;
   grid-column: 1fr / span 4fr;
+}
+
+h1 {
+  font-size: large;
 }
 
 .title {
@@ -251,8 +254,8 @@ li {
   .tab {
     font-size: medium;
   }
-  .name {
-    font-size: x-large;
+  h1 {
+    font-size: large;
   }
   .headshot {
     margin: 10px;
@@ -284,8 +287,8 @@ li {
   .tab {
     font-size: large;
   }
-  .name {
-    font-size: xx-large;
+  h1 {
+    font-size: large;
   }
   .headshot {
     margin: 10px;

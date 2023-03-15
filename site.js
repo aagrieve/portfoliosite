@@ -96,10 +96,7 @@ const aboutPage = () => {
 
   const headshot = document.createElement("img");
   headshot.setAttribute("src", "./images/headshot.jpg");
-  headshot.setAttribute(
-    "alt",
-    `An image of Aidan Grieve. He has long curly reddish hair, round glasses, and is wearing a grey buttoned up shirt.`
-  );
+  headshot.setAttribute("alt", `An image of Aidan Grieve.`);
   headshot.setAttribute("class", "headshot");
 
   // bio section
