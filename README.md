@@ -18,6 +18,7 @@ If I had more time to work on the project, I would have explored bootstrap or a 
 - https://developer.mozilla.org/en-US/
 - https://stackoverflow.com/questions/14263594/how-to-show-text-on-image-when-hovering
 - https://stackoverflow.com/questions/10567847/window-name-as-a-data-transport-a-valid-approach
+- https://css-tricks.com/snippets/css/complete-guide-grid/
 
 ## Deployed
 
